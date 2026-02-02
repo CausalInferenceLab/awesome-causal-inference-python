@@ -1,0 +1,512 @@
+{
+  "notebooks": [
+    {
+      "id": "ols",
+      "path": "part1/ols.ipynb",
+      "title": "OLS + Fixed Effects",
+      "title_ko": "OLS와 고정 효과",
+      "description": "controls와 panel fixed effects를 포함한 OLS로 ATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["regression"],
+        "data": ["panel", "cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": true,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "ipw_psm",
+      "path": "part1/ipw_psm.ipynb",
+      "title": "IPW & Propensity Score Matching",
+      "title_ko": "역확률 가중치와 성향 점수 매칭",
+      "description": "성향 점수 기반 IPW, PSM, AIPW로 ATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["weighting", "matching"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness", "overlap"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "did",
+      "path": "part1/did.ipynb",
+      "title": "Difference-in-Differences",
+      "title_ko": "이중차분법",
+      "description": "패널 데이터에서 평행 추세 가정 하에 ATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["did"],
+        "data": ["panel"],
+        "treatment": ["binary"],
+        "assumption": ["parallel-trends"],
+        "identification": ["design-based"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": true,
+        "backdoor_satisfied": false,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "sc",
+      "path": "part1/sc.ipynb",
+      "title": "Synthetic Control",
+      "title_ko": "합성 대조군",
+      "description": "가중 평균으로 합성된 대조군을 사용해 ATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["sc"],
+        "data": ["time-series", "panel"],
+        "treatment": ["binary"],
+        "assumption": ["parallel-trends"],
+        "identification": ["design-based"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": true,
+        "backdoor_satisfied": false,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "sdid",
+      "path": "part1/sdid.ipynb",
+      "title": "Synthetic Difference-in-Differences",
+      "title_ko": "합성 이중차분법",
+      "description": "SC와 DiD를 결합한 방법으로 ATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["sc", "did"],
+        "data": ["panel"],
+        "treatment": ["binary"],
+        "assumption": ["parallel-trends"],
+        "identification": ["design-based"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": true,
+        "backdoor_satisfied": false,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "iv",
+      "path": "part1/iv.ipynb",
+      "title": "Instrumental Variables (2SLS)",
+      "title_ko": "도구 변수",
+      "description": "도구 변수를 활용한 LATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["late"],
+        "method": ["iv"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["exclusion", "relevance", "monotonicity"],
+        "identification": ["design-based"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": true,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": false,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "iv_cate",
+      "path": "part1/iv_cate.ipynb",
+      "title": "IV with CATE",
+      "title_ko": "도구 변수 + 이질적 효과",
+      "description": "도구 변수와 DML을 결합한 CATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["late", "cate"],
+        "method": ["iv", "dml"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["exclusion", "relevance"],
+        "identification": ["design-based"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": true,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": false,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "rdd",
+      "path": "part1/rdd.ipynb",
+      "title": "Regression Discontinuity Design",
+      "title_ko": "회귀 단절 설계",
+      "description": "cutoff 기준 처치 할당 시 LATE 추정",
+      "part": 1,
+      "tags": {
+        "estimand": ["late"],
+        "method": ["rdd"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["continuity"],
+        "identification": ["design-based"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": true,
+        "has_temporal": false,
+        "backdoor_satisfied": false,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "dml",
+      "path": "part2/dml.ipynb",
+      "title": "Double Machine Learning",
+      "title_ko": "이중 머신러닝",
+      "description": "cross-fitting을 활용한 ATE/CATE 추정",
+      "part": 2,
+      "tags": {
+        "estimand": ["ate", "cate"],
+        "method": ["dml"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary", "continuous"],
+        "assumption": ["unconfoundedness", "overlap"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "meta_learner",
+      "path": "part2/meta_learner.ipynb",
+      "title": "Meta-Learners (S/T/X-Learner)",
+      "title_ko": "메타 러너",
+      "description": "S/T/X-Learner를 활용한 CATE 추정",
+      "part": 2,
+      "tags": {
+        "estimand": ["cate"],
+        "method": ["meta-learner"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "cate_with_nn",
+      "path": "part2/cate_with_nn.ipynb",
+      "title": "CATE with Neural Networks",
+      "title_ko": "신경망 기반 CATE",
+      "description": "DragonNet, CEVAE 등 딥러닝 기반 CATE 추정",
+      "part": 2,
+      "tags": {
+        "estimand": ["cate"],
+        "method": ["neural-net"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "backdoor_criterion",
+      "path": "part2/backdoor_criterion.ipynb",
+      "title": "Backdoor Criterion",
+      "title_ko": "백도어 기준",
+      "description": "인과 그래프 기반 백도어 조정으로 ATE 추정",
+      "part": 2,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["regression", "dml"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["backdoor"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "causal_discovery",
+      "path": "part2/causal_discovery.ipynb",
+      "title": "Causal Discovery",
+      "title_ko": "인과 발견",
+      "description": "LiNGAM, PC, GES 등으로 인과 구조 학습",
+      "part": 2,
+      "tags": {
+        "estimand": [],
+        "method": ["causal-discovery"],
+        "data": ["cross-sectional"],
+        "treatment": [],
+        "assumption": [],
+        "identification": []
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": false,
+        "treatment_binary": false
+      }
+    },
+    {
+      "id": "msm",
+      "path": "part2/MSM.ipynb",
+      "title": "Marginal Structural Models",
+      "title_ko": "주변 구조 모형",
+      "description": "시변 처치에 대한 ATE 추정",
+      "part": 2,
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["msm"],
+        "data": ["longitudinal"],
+        "treatment": ["time-varying"],
+        "assumption": ["no-interference", "unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": true,
+        "backdoor_satisfied": true,
+        "treatment_binary": false
+      }
+    },
+    {
+      "id": "policy_learning",
+      "path": "part2/policy_learning.ipynb",
+      "title": "Policy Learning",
+      "title_ko": "정책 학습",
+      "description": "최적 정책 학습 및 평가",
+      "part": 2,
+      "tags": {
+        "estimand": ["policy"],
+        "method": ["causal-forest", "meta-learner"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "interpretability",
+      "path": "part2/interpretability.ipynb",
+      "title": "CATE Interpretability",
+      "title_ko": "CATE 해석",
+      "description": "Causal Tree, SHAP 등으로 CATE 해석",
+      "part": 2,
+      "tags": {
+        "estimand": ["cate"],
+        "method": ["causal-forest"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "frontdoor_criterion",
+      "path": "examples/frontdoor_criterion.ipynb",
+      "title": "Frontdoor Criterion",
+      "title_ko": "프론트도어 기준",
+      "description": "매개 변수를 통한 인과 효과 식별",
+      "part": "examples",
+      "tags": {
+        "estimand": ["ate"],
+        "method": ["regression"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": [],
+        "identification": ["frontdoor"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": false,
+        "frontdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "budget_constrained_optimization",
+      "path": "examples/budget_constrained_optimization.ipynb",
+      "title": "Budget-Constrained Optimization",
+      "title_ko": "예산 제약 최적화",
+      "description": "비용 제약 하에서 최적 처치 할당",
+      "part": "examples",
+      "tags": {
+        "estimand": ["policy"],
+        "method": ["meta-learner"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    },
+    {
+      "id": "fractional_uplift",
+      "path": "examples/fractional_uplift.ipynb",
+      "title": "Fractional Uplift Modeling",
+      "title_ko": "업리프트 모델링",
+      "description": "처치 효과 이질성 기반 타겟팅",
+      "part": "examples",
+      "tags": {
+        "estimand": ["cate"],
+        "method": ["meta-learner"],
+        "data": ["cross-sectional"],
+        "treatment": ["binary"],
+        "assumption": ["unconfoundedness"],
+        "identification": ["selection-on-observables"]
+      },
+      "questions": {
+        "is_rct": false,
+        "has_instrument": false,
+        "has_running_variable": false,
+        "has_temporal": false,
+        "backdoor_satisfied": true,
+        "treatment_binary": true
+      }
+    }
+  ],
+  "tag_definitions": {
+    "estimand": {
+      "ate": "Average Treatment Effect",
+      "att": "Average Treatment Effect on the Treated",
+      "late": "Local Average Treatment Effect",
+      "cate": "Conditional Average Treatment Effect",
+      "policy": "Policy Value / Optimal Policy"
+    },
+    "method": {
+      "regression": "OLS, Fixed Effects",
+      "matching": "Propensity Score Matching",
+      "weighting": "IPW, AIPW",
+      "did": "Difference-in-Differences",
+      "sc": "Synthetic Control",
+      "rdd": "Regression Discontinuity Design",
+      "iv": "Instrumental Variables",
+      "dml": "Double Machine Learning",
+      "meta-learner": "S/T/X/R-Learner",
+      "causal-forest": "Causal Forest, GRF",
+      "neural-net": "DragonNet, CEVAE",
+      "causal-discovery": "LiNGAM, PC, GES",
+      "msm": "Marginal Structural Models"
+    },
+    "data": {
+      "cross-sectional": "Single time period",
+      "panel": "Multiple time periods, same units",
+      "time-series": "Aggregate time series",
+      "longitudinal": "Time-varying treatment tracking"
+    },
+    "treatment": {
+      "binary": "Binary treatment (0/1)",
+      "continuous": "Continuous treatment (dose-response)",
+      "time-varying": "Time-varying treatment"
+    },
+    "assumption": {
+      "unconfoundedness": "No unmeasured confounding",
+      "overlap": "Common support / Positivity",
+      "parallel-trends": "Parallel trends assumption",
+      "exclusion": "Exclusion restriction (IV)",
+      "relevance": "Instrument relevance (IV)",
+      "monotonicity": "No defiers (IV)",
+      "continuity": "Continuity at cutoff (RDD)",
+      "no-interference": "SUTVA / No interference"
+    },
+    "identification": {
+      "selection-on-observables": "Conditional on observed covariates",
+      "design-based": "Design-based (RCT, RDD, IV, DiD)",
+      "backdoor": "Backdoor criterion satisfied",
+      "frontdoor": "Frontdoor criterion satisfied"
+    }
+  }
+}
