@@ -137,3 +137,5 @@ _build/
 # poetry files
 pyproject.toml
 
+# vibe coding
+/prompts/*
