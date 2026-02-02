@@ -161,7 +161,35 @@ Notebook에서는 제목 계층을 다음과 같이 사용한다.
 
 ---
 
+## 7. 태그 시스템
+
+노트북 검색 및 탐색을 위해 **중앙 인덱스 파일**(`book/data/notebook_index.json`)에서 태그를 관리한다.
+
+### 태그 카테고리
+
+| 카테고리 | 필수 여부 | 예시 |
+|----------|----------|------|
+| `estimand` | 필수 | `ate`, `cate`, `late`, `policy` |
+| `method` | 필수 | `regression`, `did`, `dml`, `meta-learner` |
+| `data` | 필수 | `cross-sectional`, `panel`, `longitudinal` |
+| `treatment` | 필수 | `binary`, `continuous`, `time-varying` |
+| `assumption` | 권장 | `unconfoundedness`, `parallel-trends` |
+| `identification` | 권장 | `selection-on-observables`, `design-based`, `backdoor` |
+
+### 새 노트북 추가 시
+
+1. `book/data/notebook_index.json`에 해당 노트북 정보 추가
+2. 필수 태그 (`estimand`, `method`, `data`, `treatment`) 반드시 포함
+3. `questions` 필드에 Decision Tree용 정보 작성
+
+### 태그 정의 참조
+
+- 전체 태그 목록: `book/data/notebook_index.json`의 `tag_definitions`
+- Method Finder: `book/method_finder.md`
+
+---
+
 ⚠️ **중요**
 
-이 문서의 규칙을 따르지 않는 Notebook, 코드, 설명은  
+이 문서의 규칙을 따르지 않는 Notebook, 코드, 설명은
 **리뷰 없이 수정 또는 제거될 수 있다.**
