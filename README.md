@@ -1,5 +1,16 @@
 # Awesome Causal Inference with Python
 
+인과추론 방법을 주제별 파이썬 노트북으로 정리하는 가짜연구소 인과추론팀의 코드북입니다.
+
+- 웹페이지: https://causalinferencelab.github.io/awesome-causal-inference-python/main/intro.html
+- 노트북 원본: [`book/`](book)
+
+| 파트 | 다루는 내용 |
+| --- | --- |
+| Part 1 | OLS, IPW·PSM, 이중차분법, 통제집단합성법, SDID, 도구변수, RDD |
+| Part 2 | DML, 메타러너, 정책 학습, 신경망 CATE, 해석 가능성, 백도어 기준, 인과 발견, MSM |
+| Examples | Fractional Uplift, 예산 제약 최적화, 프론트도어 기준 |
+
 ## 🛠️ 우리의 개발 문화 (Our Development Culture)
 **우리의 개발 문화**  
 ```python
